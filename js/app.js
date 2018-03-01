@@ -1,72 +1,91 @@
 let respuestaCorrecta, tdClick;
+let ganada = false;
+let btnReiniciar = document.getElementById('btnReiniciar');
 let divPregunta = document.getElementById('pregunta');
 let form = document.getElementById('form');
 let spanTurno = document.getElementById('turno');
 let tdArray = document.getElementsByTagName('td');
-let turno = true;
 let preguntas = [
     {
         "pregunta": "¿Qué es el proceso de decisión de compra?",
         "respuestas": [
-            {"id": 1, "respuesta": "a"},
-            {"id": 2, "respuesta": "b"},
-            {"id": 3, "respuesta": "c"}
+            {"id": 1, "respuesta": "Serie de etapas para la elección de un producto"},
+            {"id": 2, "respuesta": "Serie de etapas para diseñar una estrategia de marketing"},
+            {"id": 3, "respuesta": "Serie de etapas para vender un producto"}
         ],
         "correcta": 1
+    },
+    {
+        "pregunta": "¿Cuántas son las etapas del proceso de decisión de compra?",
+        "respuestas": [
+            {"id": 1, "respuesta": "2"},
+            {"id": 2, "respuesta": "8"},
+            {"id": 3, "respuesta": "5"}
+        ],
+        "correcta": 3
     },
     {
         "pregunta": "¿Cuáles son las etapas del proceso de decisión de compra?",
         "respuestas": [
-            {"id": 1, "respuesta": "d"},
-            {"id": 2, "respuesta": "e"},
-            {"id": 3, "respuesta": "f"}
+            {"id": 1, "respuesta": "Reconocimiento, venta, evaluación, análisis, poscompra"},
+            {"id": 2, "respuesta": "Reconocimiento, evaluación, compra, precompra"},
+            {"id": 3, "respuesta": "Reconocimiento, investigación, evaluación, compra, poscompra"}
         ],
-        "correcta": 1
+        "correcta": 3
     },
     {
-        "pregunta": "¿De qué trata la etapa de IDENTIFICACIÓN DEL PROBLEMA?",
+        "pregunta": "¿Qué preguntas responde el proceso de decisión de compra?",
         "respuestas": [
-            {"id": 1, "respuesta": "g"},
-            {"id": 2, "respuesta": "h"},
-            {"id": 3, "respuesta": "i"}
+            {"id": 1, "respuesta": "qué vender, cuánto vender, dónde vender, cuándo y cómo vender"},
+            {"id": 2, "respuesta": "qué comprar, cuánto comprar, dónde comprar, cuándo y cómo comprar"},
+            {"id": 3, "respuesta": "qué comprar, cuánto vender, dónde comprar, cuándo y cómo vender"}
         ],
-        "correcta": 1
+        "correcta": 2
     },
     {
-        "pregunta": "¿De qué trata la etapa de BÚSQUEDA DE INFORMACIÓN?",
+        "pregunta": "¿De qué trata la etapa de RECONOCER UNA NECESIDAD (AWARENESS)?",
         "respuestas": [
-            {"id": 1, "respuesta": "j"},
-            {"id": 2, "respuesta": "k"},
-            {"id": 3, "respuesta": "l"}
+            {"id": 1, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
+            {"id": 2, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
+            {"id": 3, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"}
         ],
-        "correcta": 1
+        "correcta": 3
     },
     {
-        "pregunta": "¿De qué trata la etapa de ANÁLISIS DE LAS ALTERNATIVAS?",
+        "pregunta": "¿De qué trata la etapa de INVESTIGACIÓN?",
         "respuestas": [
-            {"id": 1, "respuesta": "m"},
-            {"id": 2, "respuesta": "n"},
-            {"id": 3, "respuesta": "o"}
+            {"id": 1, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
+            {"id": 2, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
+            {"id": 3, "respuesta": "el consumidor considera que tiene suficiente información, toma una decisión y decide comprar"}
+        ],
+        "correcta": 2
+    },
+    {
+        "pregunta": "¿De qué trata la etapa de EVALUACIÓN DE ALTERNATIVAS?",
+        "respuestas": [
+            {"id": 1, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
+            {"id": 2, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"},
+            {"id": 3, "respuesta": "en esta etapa operan sentimientos de satisfacción o insatisfacción"}
         ],
         "correcta": 1
     },
     {
         "pregunta": "¿De qué trata la etapa de COMPRA?",
         "respuestas": [
-            {"id": 1, "respuesta": "p"},
-            {"id": 2, "respuesta": "q"},
-            {"id": 3, "respuesta": "r"}
+            {"id": 1, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
+            {"id": 2, "respuesta": "el consumidor considera que tiene suficiente información, toma una decisión y decide comprar"},
+            {"id": 3, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"}
         ],
-        "correcta": 1
+        "correcta": 2
     },
     {
         "pregunta": "¿De qué trata la etapa de POSCOMPRA?",
         "respuestas": [
-            {"id": 1, "respuesta": "s"},
-            {"id": 2, "respuesta": "t"},
-            {"id": 3, "respuesta": "v"}
+            {"id": 1, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"},
+            {"id": 2, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
+            {"id": 3, "respuesta": "en esta etapa operan sentimientos de satisfacción o insatisfacción"}
         ],
-        "correcta": 1
+        "correcta": 3
     }
 ];
 
@@ -121,12 +140,13 @@ function validarNueve() {
     return false;
 }
 
-function toggleSeleccionada(tdSeleccionada) {
+function toggleSeleccionada(tdSeleccionada=null) {
     for (var i = tdArray.length - 1; i >= 0; i--) {
         tdArray[i].classList.remove('seleccionada');
     }
-
-    tdSeleccionada.classList.add('seleccionada');
+    if (tdSeleccionada) {
+        tdSeleccionada.classList.add('seleccionada');
+    }
 }
 
 function cambiarFondo(td1, td2, td3) {
@@ -141,8 +161,18 @@ function cambiarFondo(td1, td2, td3) {
 
 for (var i = tdArray.length - 1; i >= 0; i--) {
     tdArray[i].addEventListener('click', e => {
+        if (ganada) {
+            return;
+        }
+
+        toggleSeleccionada();
+        divPregunta.innerHTML = '';
         while (form.firstChild) {
             form.removeChild(form.firstChild);
+        }
+
+        if (e.target.childNodes.length) {
+            return;
         }
 
         let numeroAleatorio = Math.floor(Math.random() * preguntas.length-1) + 1;
@@ -153,7 +183,7 @@ for (var i = tdArray.length - 1; i >= 0; i--) {
         tdClick = document.getElementById(e.target.id);
         toggleSeleccionada(tdClick);
         
-        divPregunta.innerHTML =  pregunta;
+        divPregunta.innerHTML = pregunta;
 
         respuestas.forEach(respuesta => {
             let radio = document.createElement('input');
@@ -187,7 +217,6 @@ form.addEventListener('submit', e => {
     
     let radios = e.target.respuestas;
     let cambiaTurno = false;
-    let ganada = false;
 
     radios.forEach(radio => {
         if (radio.checked) {
@@ -198,6 +227,7 @@ form.addEventListener('submit', e => {
                 if (validarUno() || validarCinco() || validarNueve()) {
                     alert('Gana ' + equisCirculo);
                     ganada = true;
+                    sessionStorage.setItem('turno', turno);
                 }
             } else {
                 alert('Error. La correcta era ' + respuestaCorrecta.respuesta);
@@ -210,11 +240,29 @@ form.addEventListener('submit', e => {
     if (cambiaTurno) {
         turno = !turno;
         spanTurno.innerHTML = turno ? 'X' : 'O';
+        tdSeleccionada = null;
+        divPregunta.innerHTML = '';
+        while (form.firstChild) {
+            form.removeChild(form.firstChild);
+        }
     } else {
         alert('Escoge una opción');
     }
 });
 
 window.addEventListener('load', e => {
-    spanTurno.innerHTML = turno ? 'X' : 'O';
+    window.turno = sessionStorage.getItem('turno');
+    
+    if (turno === null) {
+        sessionStorage.setItem('turno', true);
+    } else {
+        sessionStorage.setItem('turno', turno);
+    }
+
+    turno = sessionStorage.getItem('turno');
+    spanTurno.innerHTML = turno === "true" ? 'X' : 'O';
+});
+
+btnReiniciar.addEventListener('click', function() {
+    location.reload();
 });
