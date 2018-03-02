@@ -7,83 +7,128 @@ let spanTurno = document.getElementById('turno');
 let tdArray = document.getElementsByTagName('td');
 let preguntas = [
     {
-        "pregunta": "¿Qué es el proceso de decisión de compra?",
+        "pregunta": "El 35% de los bienes que importa México proviene de países con los que no tiene Tratado de Libre Comercio, lo que genera consecuencias en la economía",
         "respuestas": [
-            {"id": 1, "respuesta": "Serie de etapas para la elección de un producto"},
-            {"id": 2, "respuesta": "Serie de etapas para diseñar una estrategia de marketing"},
-            {"id": 3, "respuesta": "Serie de etapas para vender un producto"}
+            {"id": 1, "respuesta": "Aranceles"},
+            {"id": 2, "respuesta": "Grado de subsidios gubernamentales"},
+            {"id": 3, "respuesta": "Ley de propiedad industrial"}
         ],
         "correcta": 1
     },
     {
-        "pregunta": "¿Cuántas son las etapas del proceso de decisión de compra?",
+        "pregunta": "Aranceles",
         "respuestas": [
-            {"id": 1, "respuesta": "2"},
-            {"id": 2, "respuesta": "8"},
-            {"id": 3, "respuesta": "5"}
-        ],
-        "correcta": 3
-    },
-    {
-        "pregunta": "¿Cuáles son las etapas del proceso de decisión de compra?",
-        "respuestas": [
-            {"id": 1, "respuesta": "Reconocimiento, venta, evaluación, análisis, poscompra"},
-            {"id": 2, "respuesta": "Reconocimiento, evaluación, compra, precompra"},
-            {"id": 3, "respuesta": "Reconocimiento, investigación, evaluación, compra, poscompra"}
-        ],
-        "correcta": 3
-    },
-    {
-        "pregunta": "¿Qué preguntas responde el proceso de decisión de compra?",
-        "respuestas": [
-            {"id": 1, "respuesta": "qué vender, cuánto vender, dónde vender, cuándo y cómo vender"},
-            {"id": 2, "respuesta": "qué comprar, cuánto comprar, dónde comprar, cuándo y cómo comprar"},
-            {"id": 3, "respuesta": "qué comprar, cuánto vender, dónde comprar, cuándo y cómo vender"}
-        ],
-        "correcta": 2
-    },
-    {
-        "pregunta": "¿De qué trata la etapa de RECONOCER UNA NECESIDAD (AWARENESS)?",
-        "respuestas": [
-            {"id": 1, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
-            {"id": 2, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
-            {"id": 3, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"}
-        ],
-        "correcta": 3
-    },
-    {
-        "pregunta": "¿De qué trata la etapa de INVESTIGACIÓN?",
-        "respuestas": [
-            {"id": 1, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
-            {"id": 2, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
-            {"id": 3, "respuesta": "el consumidor considera que tiene suficiente información, toma una decisión y decide comprar"}
-        ],
-        "correcta": 2
-    },
-    {
-        "pregunta": "¿De qué trata la etapa de EVALUACIÓN DE ALTERNATIVAS?",
-        "respuestas": [
-            {"id": 1, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
-            {"id": 2, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"},
-            {"id": 3, "respuesta": "en esta etapa operan sentimientos de satisfacción o insatisfacción"}
+            {"id": 1, "respuesta": "El 35% de los bienes que importa México proviene de países con los que no tiene Tratado de Libre Comercio, lo que genera consecuencias en la economía"},
+            {"id": 2, "respuesta": "La renegociación del Tratado de Libre Comercio de América Latina (TLCAN) ha despertado una preocupación entre muchos sectores productivos del país que han salido beneficiados con este acuerdo, entre ellos, el textil y el de calzado"},
+            {"id": 3, "respuesta": "Pese a que ambas Coreas han expresado su disposición a sentarse a la mesa de diálogos y rebajar las tensiones, Estados Unidos no ha dejado de amenazar con más presiones y sanciones a Corea del Norte"}
         ],
         "correcta": 1
     },
     {
-        "pregunta": "¿De qué trata la etapa de COMPRA?",
+        "pregunta": "La renegociación del Tratado de Libre Comercio de América Latina (TLCAN) ha despertado una preocupación entre muchos sectores productivos del país que han salido beneficiados con este acuerdo, entre ellos, el textil y el de calzado",
         "respuestas": [
-            {"id": 1, "respuesta": "obtener información de fuentes personales, comerciales, públicas y empíricas"},
-            {"id": 2, "respuesta": "el consumidor considera que tiene suficiente información, toma una decisión y decide comprar"},
-            {"id": 3, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"}
+            {"id": 1, "respuesta": "Regulaciones ambientales"},
+            {"id": 2, "respuesta": "Actividades de cabildeo"},
+            {"id": 3, "respuesta": "Regulaciones de importaciones y Exportaciones"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Regulaciones de importaciones y Exportaciones",
+        "respuestas": [
+            {"id": 1, "respuesta": "Pese a que ambas Coreas han expresado su disposición a sentarse a la mesa de diálogos y rebajar las tensiones, Estados Unidos no ha dejado de amenazar con más presiones y sanciones a Corea del Norte"},
+            {"id": 2, "respuesta": "Reelecciones en Cuba. Situación política en Venezuela. Elecciones parlamentarias en E.U."},
+            {"id": 3, "respuesta": "La renegociación del Tratado de Libre Comercio de América Latina (TLCAN) ha despertado una preocupación entre muchos sectores productivos del país que han salido beneficiados con este acuerdo, entre ellos, el textil y el de calzado"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Pese a que ambas Coreas han expresado su disposición a sentarse a la mesa de diálogos y rebajar las tensiones, Estados Unidos no ha dejado de amenazar con más presiones y sanciones a Corea del Norte",
+        "respuestas": [
+            {"id": 1, "respuesta": "Regulaciones de importaciones y Exportaciones"},
+            {"id": 2, "respuesta": "Actividades de cabildeo"},
+            {"id": 3, "respuesta": "Relaciones antagónicas entre Estados Unidos y otros países"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Relaciones antagónicas entre Estados Unidos y otros países",
+        "respuestas": [
+            {"id": 1, "respuesta": "Las elecciones en México, podrían tener un impacto en la paridad del peso contra el dólar. La incertidumbre sobre el impacto en la paridad, tiene al pendiente a los empresarios, los cuales tienen ganancias y costos en pesos y en dólares"},
+            {"id": 2, "respuesta": "Reelecciones en Cuba. Situación política en Venezuela. Elecciones parlamentarias en E.U."},
+            {"id": 3, "respuesta": "Pese a que ambas Coreas han expresado su disposición a sentarse a la mesa de diálogos y rebajar las tensiones, Estados Unidos no ha dejado de amenazar con más presiones y sanciones a Corea del Norte"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Reelecciones en Cuba. Situación política en Venezuela. Elecciones parlamentarias en E.U.",
+        "respuestas": [
+            {"id": 1, "respuesta": "Actividades de cabildeo"},
+            {"id": 2, "respuesta": "Condiciones políticas en países extranjeros"},
+            {"id": 3, "respuesta": "Regulaciones de importaciones y Exportaciones"}
         ],
         "correcta": 2
     },
     {
-        "pregunta": "¿De qué trata la etapa de POSCOMPRA?",
+        "pregunta": "Las elecciones en México, podrían tener un impacto en la paridad del peso contra el dólar. La incertidumbre sobre el impacto en la paridad, tiene al pendiente a los empresarios, los cuales tienen ganancias y costos en pesos y en dólares",
         "respuestas": [
-            {"id": 1, "respuesta": "donde la persona reconoce un problema o una necesidad de determinado producto o servicio"},
-            {"id": 2, "respuesta": "consideración y evaluación de opciones con base en ciertos criterios"},
-            {"id": 3, "respuesta": "en esta etapa operan sentimientos de satisfacción o insatisfacción"}
+            {"id": 1, "respuesta": "Aranceles"},
+            {"id": 2, "respuesta": "Grado de subsidios gubernamentales"},
+            {"id": 3, "respuesta": "Elecciones locales, estatales y nacionales"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Estas actividades son para informar a personas o instituciones cuyo poder de decisión o presión puede afectar la actividad de una empresa, institución o comunidad",
+        "respuestas": [
+            {"id": 1, "respuesta": "Regulaciones de importaciones y Exportaciones"},
+            {"id": 2, "respuesta": "Actividades de cabildeo"},
+            {"id": 3, "respuesta": "Regulaciones ambientales"}
+        ],
+        "correcta": 2
+    },
+    {
+        "pregunta": "Instituto Mexicano de la Propiedad Industrial: organismo público descentralizado con personalidad jurídica, patrimonio propio y autoridad legal para administrar el sistema de propiedad industrial en nuestro país",
+        "respuestas": [
+            {"id": 1, "respuesta": "Ley de propiedad industrial"},
+            {"id": 2, "respuesta": "Grado de subsidios gubernamentales"},
+            {"id": 3, "respuesta": "Condiciones políticas en países extranjeros"}
+        ],
+        "correcta": 1
+    },
+    {
+        "pregunta": "Los programas , fondos y subsidios federales, donde varias secretarías como: la secretaria de comunicaciones y transportes, secretaria de desarrollo social, secretaria de gobernación, secretaria de salud, la secretaria de educación publica, entre otras; realizan un plan nacional de desarrollo",
+        "respuestas": [
+            {"id": 1, "respuesta": "Regulaciones ambientales"},
+            {"id": 2, "respuesta": "Grado de subsidios gubernamentales"},
+            {"id": 3, "respuesta": "Ley de propiedad industrial"}
+        ],
+        "correcta": 2
+    },
+    {
+        "pregunta": "Grado de subsidios gubernamentales",
+        "respuestas": [
+            {"id": 1, "respuesta": "Las elecciones en México, podrían tener un impacto en la paridad del peso contra el dólar. La incertidumbre sobre el impacto en la paridad, tiene al pendiente a los empresarios, los cuales tienen ganancias y costos en pesos y en dólares"},
+            {"id": 2, "respuesta": "Los programas , fondos y subsidios federales, donde varias secretarías como: la secretaria de comunicaciones y transportes, secretaria de desarrollo social, secretaria de gobernación, secretaria de salud, la secretaria de educación publica, entre otras; realizan un plan nacional de desarrollo"},
+            {"id": 3, "respuesta": "Estas actividades son para informar a personas o instituciones cuyo poder de decisión o presión puede afectar la actividad de una empresa, institución o comunidad"}
+        ],
+        "correcta": 2
+    },
+    {
+        "pregunta": "Estados Unidos mantiene un etiquetado “dolphin safe” con el que establece que el atún fue pescado bajo prácticas que no ponen en riesgo a los delfines, un sello que no le ha otorgado a México a pesar de que aquí se cumplen con los estándares internacionales de pesca",
+        "respuestas": [
+            {"id": 1, "respuesta": "Ley de propiedad industrial"},
+            {"id": 2, "respuesta": "Aranceles"},
+            {"id": 3, "respuesta": "Regulaciones ambientales"}
+        ],
+        "correcta": 3
+    },
+    {
+        "pregunta": "Regulaciones ambientales",
+        "respuestas": [
+            {"id": 1, "respuesta": "Instituto Mexicano de la Propiedad Industrial: organismo público descentralizado con personalidad jurídica, patrimonio propio y autoridad legal para administrar el sistema de propiedad industrial en nuestro país"},
+            {"id": 2, "respuesta": "Los programas , fondos y subsidios federales, donde varias secretarías como: la secretaria de comunicaciones y transportes, secretaria de desarrollo social, secretaria de gobernación, secretaria de salud, la secretaria de educación publica, entre otras; realizan un plan nacional de desarrollo"},
+            {"id": 3, "respuesta": "Estados Unidos mantiene un etiquetado “dolphin safe” con el que establece que el atún fue pescado bajo prácticas que no ponen en riesgo a los delfines, un sello que no le ha otorgado a México a pesar de que aquí se cumplen con los estándares internacionales de pesca"}
         ],
         "correcta": 3
     }
