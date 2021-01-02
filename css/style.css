@@ -1,90 +1,94 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: 0.5s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
 }
 
 body {
-    background-image: url('../img/fondo.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center; 
+  background-image: url(../img/fondo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .main {
-    width: 90%;
-    padding: 30px 0;
-    margin: 10px auto;
-    text-align: center;
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 20px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  padding: 30px 0;
+  text-align: center;
+  width: 90%;
 }
 
 .titulo {
-    font-size: 3em;
-    margin-bottom: 20px;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
 .contenido {
-    display: flex;
+  display: flex;
 }
 
 .lado-izquierdo {
-    width: 50%;
-    padding-left: 10%;
+  width: 50%;
+  padding-left: 10%;
 }
 
 .lado-derecho {
-    width: 50%;
+  width: 50%;
 }
 
 td {
-    width: 150px;
-    height: 150px;
-    font-size: 5em;
-    color: #fff;
-    background-color: rgba(34, 49, 63, 0.7);
+  width: 150px;
+  height: 150px;
+  font-size: 5em;
+  color: #fff;
+  background-color: rgba(34, 49, 63, 0.7);
 }
 
 td:hover, td.seleccionada {
-    background-color: rgba(82, 179, 217, 0.7);
-    cursor: pointer;
+  background-color: rgba(82, 179, 217, 0.7);
+  cursor: pointer;
 }
 
 .turno {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  color: blue;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
 .pregunta {
-    font-size: 2.5em;
-    margin-bottom: 15px;
+  font-size: 2.5em;
+  margin-bottom: 15px;
 }
 
 .btn {
-    display: block;
-    padding: 10px 20px;
-    margin: auto;
-    background-color: rgba(82, 179, 217, 0.5);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 2em;
-    color: #fff;
+  display: block;
+  padding: 10px 20px;
+  margin: auto;
+  background-color: rgba(82, 179, 217, 0.5);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 2em;
+  color: #fff;
 }
 
 .btn:hover {
-    background-color: rgba(25, 181, 254, 0.8);
+  background-color: rgba(25, 181, 254, 0.8);
 }
 
 .form {
-    text-align: left;
+  text-align: left;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -131,17 +135,16 @@ input[type="checkbox"]:checked + label {
 }
 
 input[type="radio"]:checked + label:before,
-input[type="checkbox"]:checked + label:before{
-    display: none;
+input[type="checkbox"]:checked + label:before {
+  display: none;
 }
 
 .reiniciar {
   cursor: pointer;
   display: inline-block;
-  color: rgba(1,50,67,0.7);
-  transition: 0s;
+  color: rgba(1, 50, 67, 0.7);
 }
 
 .reiniciar:hover {
-  color: rgba(1,50,67,1);
+  color: rgba(1, 50, 67, 1);
 }
